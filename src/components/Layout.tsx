@@ -132,9 +132,9 @@ export function Footer() {
         
         <div className="border-t border-border-light h-[60px] flex flex-col md:flex-row justify-between items-center text-[12px]">
           <p>&copy; {new Date().getFullYear()} DY International. All Rights Reserved.</p>
-          <div className="mt-2 md:mt-0 font-[600]">
-            ISO 9001:2015 Certified Trade House
-          </div>
+          {/* <div className="mt-2 md:mt-0 font-[600]">
+             ISO 9001:2015 Certified Trade House
+          </div> */}
         </div>
       </div>
     </footer>
