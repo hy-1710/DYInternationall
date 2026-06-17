@@ -75,7 +75,7 @@ export default function Home() {
             <div className="mb-[12px]">
               <textarea rows={3} placeholder="Requirements detail..." className="w-full p-[10px] rounded-[4px] border-none text-[14px] text-text-main bg-white resize-none"></textarea>
             </div>
-            <button className="bg-accent text-white border-none p-[12px] w-full rounded-[4px] font-[700] cursor-pointer mt-1 hover:opacity-90 transition-opacity uppercase text-[14px]">REQUEST QUOTATION</button>
+            <Link to="/contact" className="block text-center bg-accent text-white border-none p-[12px] w-full rounded-[4px] font-[700] cursor-pointer mt-1 hover:opacity-90 transition-opacity uppercase text-[14px]">REQUEST QUOTATION</Link>
           </div>
         </div>
       </div>

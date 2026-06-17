@@ -28,13 +28,48 @@ export default function Contact() {
     resolver: zodResolver(schema),
   });
 
+  const [submitError, setSubmitError] = useState('');
+
   const onSubmit = async (data: FormData) => {
-    console.log('Form data:', data);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+  setSubmitError('');
+  const payload = {
+    subject: `New Website Inquiry: ${data.productOfInterest}`,
+    from_name: 'DY International Website',
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    product_category: data.productOfInterest,
+    message: data.message,
   };
+
+  // Two free access keys — one per recipient inbox
+  const keys = [
+    '978af011-d233-4044-9b83-a43cf3b25446', // dyinternational27@gmail.com
+    '25ceb943-619c-4efa-83e8-74f571c2522f', // info@dyinternationalgroup.com
+  ];
+
+  try {
+    const results = await Promise.all(
+      keys.map((access_key) =>
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ access_key, ...payload }),
+        }).then((r) => r.json())
+      )
+    );
+
+    if (results.every((r) => r.success)) {
+      setIsSubmitted(true);
+      reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } else {
+      setSubmitError('Something went wrong. Please try again or email us directly.');
+    }
+  } catch {
+    setSubmitError('Network error. Please check your connection and try again.');
+  }
+};
 
   const categories = ['Agro Fertilizers', 'Industrial Chemicals', 'Agro Products', 'General Inquiry', 'Partnership'];
 
@@ -140,6 +175,12 @@ export default function Contact() {
                 />
                 {errors.message && <p className="mt-1 text-[12px] text-red-300">{errors.message.message}</p>}
               </div>
+
+              {submitError && (
+                <p className="mb-[12px] text-[13px] text-red-300 bg-red-900/30 border border-red-400/30 rounded-[4px] p-[10px]">
+                  {submitError}
+                </p>
+              )}
 
               <button
                 type="submit"
