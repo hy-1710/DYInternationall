@@ -193,6 +193,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-[700] text-[14px] text-primary mb-[4px]">Email Address</h3>
                   <p className="text-text-light text-[13px] leading-[1.5]">dyinternational27@gmail.com</p>
+                   <p className="text-text-light text-[13px] leading-[1.5]">info@dyinternationalgroup.com</p>
                 </div>
               </div>
 
