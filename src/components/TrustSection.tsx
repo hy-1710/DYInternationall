@@ -18,7 +18,7 @@ export function Certifications() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-[15px]">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[15px]">
         {certifications.map((c, i) => {
           const Icon = iconMap[c.icon] ?? ShieldCheck;
           return (
