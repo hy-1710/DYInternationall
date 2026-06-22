@@ -89,13 +89,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-4 mb-4">
-              <BrandLogo className="w-14 h-14" />
-              <div className="font-serif font-[700] text-[24px] sm:text-[28px] uppercase tracking-wide">
-                <span className="text-primary">DY</span>{' '}
-                <span className="text-[#228b22]">INTERNATIONAL</span>
-              </div>
+           <div className="flex items-center gap-4 mb-4">
+            <img src="/logo.jpeg" alt="DY International" className="w-14 h-14 object-contain" />
+            <div className="font-serif font-[700] text-[24px] sm:text-[28px] uppercase tracking-wide">
+              <span className="text-primary">DY</span>{' '}
+              <span className="text-[#228b22]">INTERNATIONAL</span>
             </div>
+          </div>
             <p className="text-[14px] max-w-sm mb-6 leading-[1.6]">
               DY International is a leading name in global trade, specializing in the distribution of high-grade agro-fertilizers and industrial chemicals.
             </p>
