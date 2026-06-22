@@ -208,7 +208,7 @@ export const certifications = [
 
 // Trade terms shown to international buyers. Edit as needed.
 export const tradeTerms = {
-  ports: 'Mundra & Kandla, Gujarat, India',
+  ports: 'Global Ports / As Per Requirement',
   incoterms: 'FOB, CIF, CFR, EXW',
   payment: 'LC at Sight, TT (Advance / Balance)',
   leadTime: '2–4 weeks (subject to quantity)',

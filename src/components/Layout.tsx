@@ -23,7 +23,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-full">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-4">
-              <BrandLogo className="w-16 h-16" />
+              <img src="/logo.jpeg" alt="DY International" className="w-16 h-16 object-contain" />
               <span className="font-serif font-[700] text-[24px] sm:text-[32px] uppercase tracking-wide">
                 <span className="text-primary">DY</span>{' '}
                 <span className="text-[#228b22]">INTERNATIONAL</span>
